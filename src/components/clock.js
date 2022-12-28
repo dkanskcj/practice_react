@@ -44,7 +44,7 @@ class Clock extends React.Component {
         this.oneMinuteCall = setInterval(() => this.getDate(), 60000);
     }
 
-    componentDidUnMount() {
+    componentWillUnmount() {
         clearInterval(this.oneMinuteCall);
     }
 }
