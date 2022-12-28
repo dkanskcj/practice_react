@@ -40,10 +40,12 @@ class Clock extends React.Component {
         });
     };
 
+    // 화면에 전부 그려졌을 때 실행
     componentDidMount() {
         this.oneMinuteCall = setInterval(() => this.getDate(), 60000);
     }
 
+    // 사라지기 직전에 호출
     componentWillUnmount() {
         clearInterval(this.oneMinuteCall);
     }

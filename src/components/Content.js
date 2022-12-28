@@ -1,11 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import Clock from "./clock";
+import Clock from "./Clock";
+import TodoList from "./TodoList";
 
 const Content = () => {
     return (
         <Container>
             <Clock />
+            <TodoList />
         </Container>
     )
 };
