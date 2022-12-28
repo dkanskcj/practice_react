@@ -19,6 +19,6 @@ const Container = styled.div`
     width: 500px;
     height: calc(100% - 33px);
     color: white;
-    /* background-color: white; */
+    overflow-y: auto;
 `
 export default Content;

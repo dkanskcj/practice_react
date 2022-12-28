@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-const TodoRow = ({ todo, index }) => {
+const TodoRow = ({ todo, index, handleClickRemove }) => {
     return (
-        <Container>
+        <Container onClick={() => handleClickRemove(index)}>
             { index }. { todo }
         </Container>
     );

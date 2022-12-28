@@ -2,12 +2,17 @@ import React from "react";
 import styled from "styled-components";
 import TodoRow from "./TodoRow";
 
-const TodoList = ({todoList}) => {
+const TodoList = ({ todoList, handleClickRemove }) => {
     return (
         <Container>
             {
                 todoList.map((todo, index) => (
-                    <TodoRow todo = {todo} key = {index} index = {index}></TodoRow>
+                    <TodoRow
+                        todo={todo}
+                        key={index}
+                        index={index}
+                        handleClickRemove={handleClickRemove}
+                    ></TodoRow>
                 ))
             }
         </Container>

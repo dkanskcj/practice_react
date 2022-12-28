@@ -11,7 +11,7 @@ class Todo extends React.Component{
         return(
             <Container>
                 <Input placeholder="오늘의 할 일" onKeyPress={this.handleInputKeyPress}></Input>
-                <TodoList todoList={this.state.todoList}></TodoList>
+                <TodoList todoList={this.state.todoList} handleClickRemove = {this.handleClickRemove}></TodoList>
             </Container>
         );
     }
@@ -31,6 +31,20 @@ class Todo extends React.Component{
                 () => localStorage.setItem("todoList", JSON.stringify(this.state.todoList))
             );
             event.target.value = "";
+        }
+    }
+
+    handleClickRemove = index => {
+        if(window.confirm('목록에서 삭제하시겠습니까?')){
+            this.setState(
+                state => ({
+                    todoList: [
+                        ...state.todoList.slice(0, index),
+                        ...state.todoList.slice(index + 1)
+                    ]
+                }),
+                () => localStorage.setItem("todoList", JSON.stringify(this.state.todoList))
+            );
         }
     }
 }
