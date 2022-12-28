@@ -33,6 +33,20 @@ class Clock extends React.Component {
             </Container>
         );
     }
+
+    getDate = () => {
+        this.setState({
+            date: new Date()
+        });
+    };
+
+    componentDidMount() {
+        this.oneMinuteCall = setInterval(() => this.getDate(), 60000);
+    }
+
+    componentDidUnMount() {
+        clearInterval(this.oneMinuteCall);
+    }
 }
 
 const Container = styled.div`
