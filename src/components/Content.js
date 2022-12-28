@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Clock from "./Clock";
-import TodoList from "./TodoList";
+import TodoList from "./Todo";
 
 const Content = () => {
     return (
